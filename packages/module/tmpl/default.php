@@ -1,5 +1,5 @@
 <div class="portals">
-    <h3><?= JText::_('Vist our websites'); ?></h3>
+    <h3><?= $module->title; ?></h3>
     <div class="row">
         <div class="col-sm-11 col-xs-12">
         <? foreach($portals as $portal) : ?>

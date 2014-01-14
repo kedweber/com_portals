@@ -10,9 +10,9 @@
 	<version>1.0.0</version>
 	<description>Mod Portals</description>
 	<files>
+		<filename module="mod_portals">mod_portals.php</filename>
         <folder>tmpl</folder>
         <filename>html.php</filename>
-		<filename>mod_portals.php</filename>
 		<filename>mod_portals.xml</filename>
 	</files>
 </extension>
