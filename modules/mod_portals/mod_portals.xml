@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_portals</name>
+	<author>Joep van der Heijden</author>
+	<creationDate>October 2013</creationDate>
+	<copyright>Copyright (C) 2005 - 2013 Moyo Web Architects. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>joep.van.der.heijden@moyoweb.nl</authorEmail>
+	<authorUrl>http://moyoweb.nl</authorUrl>
+	<version>1.0.0</version>
+	<description>Mod Portals</description>
+	<files>
+        <folder>tmpl</folder>
+        <filename>html.php</filename>
+		<filename>mod_portals.php</filename>
+		<filename>mod_portals.xml</filename>
+	</files>
+</extension>
