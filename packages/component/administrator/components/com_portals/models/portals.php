@@ -35,5 +35,9 @@ class ComPortalsModelPortals extends ComDefaultModelDefault
         if(is_numeric($state->enabled)) {
             $query->where('tbl.enabled', '=', $state->enabled);
         }
+
+		if($state->search) {
+			$query->where('tbl.title', 'LIKE', '%'.$state->search.'%');
+		}
     }
 }

@@ -6,7 +6,16 @@
 -->
 
 <div class="row-fluid">
-    <form action="" method="get" class="-koowa-grid" data-toolbar=".toolbar-list">
+	<form action="" method="get" class="-koowa-grid" data-toolbar=".toolbar-list">
+		<div class="btn-toolbar" id="filter-bar">
+			<div class="filter-search btn-group pull-left">
+				<input type="text" value="<?= $state->search; ?>" placeholder="Search" id="filter_search" name="search">
+			</div>
+			<div class="btn-group pull-left hidden-phone">
+				<button title="" class="btn hasTooltip" type="submit" data-original-title="Search"><i class="icon-search"></i></button>
+				<button onclick="document.id('filter_search').value='';this.form.submit();" title="" class="btn hasTooltip" type="button" data-original-title="Clear"><i class="icon-remove"></i></button>
+			</div>
+		</div>
         <table class="table table-striped">
             <thead>
             <tr>
