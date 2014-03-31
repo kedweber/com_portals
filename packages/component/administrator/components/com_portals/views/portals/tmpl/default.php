@@ -16,18 +16,32 @@
                 <th>
                     <?= @helper('grid.sort', array('column' => 'title', 'title' => @text('TITLE'))); ?>
                 </th>
-                <th width="5%">
-                    <?= @helper('grid.sort', array('column' => 'order', 'title' => @text('ORDER'))); ?>
-                </th>
-                <th width="5%">
-                    <?= @helper('grid.sort', array('column' => 'enabled', 'title' => @text('ENABLED'))); ?>
+				<th>
+					<?= @helper('grid.sort', array('column' => 'enabled', 'title' => @text('PUBLISHED'))); ?>
+				</th>
+				<? if($portals->isTranslatable()) : ?>
+					<th>
+						<?= @text('TRANSLATIONS') ?>
+					</th>
+				<? endif; ?>
+				<th>
+					<?= @text('OWNER'); ?>
+				</th>
+				<th>
+					<?= @helper('grid.sort', array('column' => 'created_on', 'title' => @text('Date'))); ?>
+				</th>
+				<th>
+					<?= @helper('grid.sort', array('column' => 'order', 'title' => @text('ORDER'))); ?>
+				</th>
+				<th>
+					<?= @helper('grid.sort', array('column' => 'id', 'title' => @text('ID'))); ?>
                 </th>
             </tr>
             </thead>
 
             <tfoot>
             <tr>
-                <td colspan="6">
+                <td colspan="20">
                     <?= @helper('paginator.pagination', array('total' => $total)) ?>
                 </td>
             </tr>
@@ -44,18 +58,35 @@
                         <?= $portal->title; ?>
                     </a>
                 </td>
-                <td>
-                    <?= @helper('grid.order', array('row' => $portal, 'total' => $total)); ?>
-                </td>
-                <td>
-                    <?= @helper('grid.enable', array('row' => $portal)); ?>
-                </td>
+				<td>
+					<?= @helper('grid.enable', array('row' => $portal)); ?>
+				</td>
+				<? if($portal->isTranslatable()) : ?>
+					<td>
+						<?= @helper('com://admin/translations.template.helper.language.translations', array(
+							'row' => $portal->id,
+							'table' => $portal->getTable()->getName()
+						)); ?>
+					</td>
+				<? endif; ?>
+				<td>
+					<?= $portal->created_by_name; ?>
+				</td>
+				<td>
+					<?= @helper('date.humanize', array('date' => $portal->created_on)) ?>
+				</td>
+				<td>
+					<?= @helper('grid.order', array('row' => $portal, 'total' => $total)); ?>
+				</td>
+				<td>
+					<?= $portal->id; ?>
+				</td>
             </tr>
             <? endforeach; ?>
             <? if (!count($portals)) : ?>
             <tr>
-                <td colspan="5" align="center" style="text-align: center;">
-                    <?= @text('PORTALS_NO_ITEMS') ?>
+                <td colspan="20" align="center" style="text-align: center;">
+                    <?= @text('NO_ITEMS') ?>
                 </td>
             </tr>
             <? endif; ?>

@@ -11,6 +11,6 @@
     <description>Portals Package</description>
     <files folder="packages">
         <file type="component" id="portals">component</file>
-        <file type="module" id="portals" client="site">module</file>
+        <file type="module" id="portals" client="site">modules/mod_portals</file>
     </files>
 </extension>
