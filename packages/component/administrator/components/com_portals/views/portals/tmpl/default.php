@@ -28,6 +28,9 @@
 				<th>
 					<?= @helper('grid.sort', array('column' => 'enabled', 'title' => @text('PUBLISHED'))); ?>
 				</th>
+                <th>
+                    <?= @helper('grid.sort', array('column' => 'featured', 'title' => @text('FEATURED'))); ?>
+                </th>
 				<? if($portals->isTranslatable()) : ?>
 					<th>
 						<?= @text('TRANSLATIONS') ?>
@@ -70,6 +73,9 @@
 				<td>
 					<?= @helper('grid.enable', array('row' => $portal)); ?>
 				</td>
+                <td>
+                    <?= @helper('grid.enable', array('row' => $portal, 'field' => 'featured')); ?>
+                </td>
 				<? if($portal->isTranslatable()) : ?>
 					<td>
 						<?= @helper('com://admin/translations.template.helper.language.translations', array(
