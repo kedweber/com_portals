@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Show category">
+		<message>
+			Display a category and it's portals
+		</message>
+	</layout>
+	<fields name="request" addfieldpath="components/com_portals/fields">
+		<fieldset name="request">
+			<field
+					name="id"
+					type="categorylist"
+					label="Category"
+					description="Select the category to display"
+					/>
+		</fieldset>
+	</fields>
+</metadata>

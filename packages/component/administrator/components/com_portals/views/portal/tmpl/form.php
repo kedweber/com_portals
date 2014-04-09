@@ -25,10 +25,19 @@
                         <input type="text" name="slug" value="<?= $portal->slug ?>" placeholder="<?= @text('SLUG'); ?>" />
                     </div>
                 </div>
+                <div class="control-group">
+                    <label class="control-label"><?= @text('CATEGORY'); ?>*</label>
+                    <div class="controls">
+                        <?= @helper('com://admin/portals.template.helper.listbox.categories', array(
+                            'selected' => $portal->portals_category_id,
+                            'name' => 'portals_category_id'
+                        )); ?>
+                    </div>
+                </div>
             </fieldset>
 
             <fieldset>
-                <legend><?= @text('FEILDS'); ?></legend>
+                <legend><?= @text('FIELDS'); ?></legend>
                 <?= @service('com://admin/cck.controller.element')->cck_fieldset_id($portal->cck_fieldset_id)->row($portal->id)->table('portals_portals')->getView()->assign('row', $portal)->layout('list')->display(); ?>
             </fieldset>
         </div>

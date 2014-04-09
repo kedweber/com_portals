@@ -15,19 +15,16 @@ class ComPortalsDatabaseTablePortals extends KDatabaseTableDefault
     {
         $config->append(array(
             'behaviors' => array(
-				'identifiable',
-				'com://admin/moyo.database.behavior.sluggable',
-				'orderable',
-				'com://admin/moyo.database.behavior.creatable',
-				'modifiable',
-				'lockable',
+                'identifiable',
+                'com://admin/moyo.database.behavior.sluggable',
+                'orderable',
+                'com://admin/moyo.database.behavior.creatable',
+                'modifiable',
+                'lockable',
                 'com://admin/cck.database.behavior.elementable',
                 'com://admin/taxonomy.database.behavior.relationable',
                 'com://admin/translations.database.behavior.translatable',
                 'com://admin/routes.database.behavior.routable'
-            ),
-            'filters' => array(
-                'fields' => array('html')
             )
         ));
 
