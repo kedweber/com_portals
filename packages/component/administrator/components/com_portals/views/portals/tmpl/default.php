@@ -25,6 +25,9 @@
                 <th>
                     <?= @helper('grid.sort', array('column' => 'title', 'title' => @text('TITLE'))); ?>
                 </th>
+                <th>
+                    <?= @helper('grid.sort', array('column' => 'portals_category_id', 'title' => @text('CATEGORY'))); ?>
+                </th>
 				<th>
 					<?= @helper('grid.sort', array('column' => 'enabled', 'title' => @text('PUBLISHED'))); ?>
 				</th>
@@ -45,9 +48,7 @@
 				<th>
 					<?= @helper('grid.sort', array('column' => 'order', 'title' => @text('ORDER'))); ?>
 				</th>
-				<th>
-					<?= @helper('grid.sort', array('column' => 'id', 'title' => @text('ID'))); ?>
-                </th>
+
             </tr>
             </thead>
 
@@ -69,6 +70,9 @@
                     <a href="<?= @route('view=portal&id='.$portal->id); ?>">
                         <?= $portal->title; ?>
                     </a>
+                </td>
+                <td>
+                    <?= $portal->getCategory() ? $portal->getCategory()->title : ''; ?>
                 </td>
 				<td>
 					<?= @helper('grid.enable', array('row' => $portal)); ?>
@@ -92,9 +96,6 @@
 				</td>
 				<td>
 					<?= @helper('grid.order', array('row' => $portal, 'total' => $total)); ?>
-				</td>
-				<td>
-					<?= $portal->id; ?>
 				</td>
             </tr>
             <? endforeach; ?>

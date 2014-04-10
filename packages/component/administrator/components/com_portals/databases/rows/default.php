@@ -13,20 +13,13 @@ defined('KOOWA') or die('Protected resource');
 
 class ComPortalsDatabaseRowDefault extends KDatabaseRowDefault
 {
-    /**
-     * @param $column
-     * @return string
-     */
-    public function __get($column)
+    public function getCategory()
     {
-        $result = parent::__get($column);
-
-        if(!array_key_exists($column, $this->_data)) {
-            if($this->isElementable()) {
-                $result = $this->getElement($column)->value;
-            }
+        if (!$this->portals_category_id) {
+            // Return empty category
+            return $this->getService('com://site/portals.model.categories')->getItem();
         }
 
-        return $result;
+        return $this->getService('com://site/portals.model.categories')->id($this->portals_category_id)->getItem();
     }
 }
