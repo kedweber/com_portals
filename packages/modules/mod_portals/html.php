@@ -2,14 +2,18 @@
 
 class ModPortalsHtml extends ModDefaultHtml
 {
+	/**
+	 * @return ModDefaultHtml
+	 */
 	public function display()
 	{
-        $portalsModel = $this->getService('com://admin/portals.model.portals');
+        $model = $this->getService('com://admin/portals.model.portals');
 
         if ($this->module->params->featured) {
-            $portalsModel->featuted(1);
+            $model->featuted(1);
         }
-		$portals = $portalsModel->getList();
+
+		$portals = $model->getList();
 
 		$this->assign('portals', $portals);
 

@@ -14,7 +14,6 @@ class ComPortalsDatabaseTableCategories extends KDatabaseTableDefault
                 'lockable',
                 'com://admin/taxonomy.database.behavior.relationable',
                 'com://admin/translations.database.behavior.translatable',
-                'com://admin/routes.database.behavior.routable'
             )
         ));
 

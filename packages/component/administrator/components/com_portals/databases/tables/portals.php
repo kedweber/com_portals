@@ -24,7 +24,6 @@ class ComPortalsDatabaseTablePortals extends KDatabaseTableDefault
                 'com://admin/cck.database.behavior.elementable',
                 'com://admin/taxonomy.database.behavior.relationable',
                 'com://admin/translations.database.behavior.translatable',
-                'com://admin/routes.database.behavior.routable',
                 'com://admin/kutafuta.database.behavior.searchable',
             ),
             'filters' => array(
