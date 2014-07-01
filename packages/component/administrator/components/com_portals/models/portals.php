@@ -19,7 +19,7 @@ class ComPortalsModelPortals extends ComDefaultModelDefault
         parent::__construct($config);
 
         $this->_state
-            ->insert('enabled', 'int')
+            ->insert('enabled'	, 'int')
         ;
     }
 

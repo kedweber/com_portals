@@ -1,45 +1,61 @@
 <?php
 
+defined('KOOWA') or die('Protected resource');
+
 class ComPortalsViewPortalHtml extends ComDefaultViewHtml
 {
-    protected function _initialize(KConfig $config)
-    {
-        $config->append(array(
-            'template_filters' => array('module'),
-        ));
+	/**
+	 * @param KConfig $config
+	 */
+	protected function _initialize(KConfig $config)
+	{
+		$config->append(array(
+			'template_filters' => array('module'),
+		));
 
-        parent::_initialize($config);
-    }
+		parent::_initialize($config);
+	}
 
-    public function display()
-    {
-        $portal = $this->getModel()->getItem();
+	public function display()
+	{
+		$portal = $this->getModel()->getItem();
 
-        //TODO: Check if itemId
-        $pathway = JFactory::getApplication()->getPathway();
+		header('X-Portal-ID: '.$portal->id);
 
-        if(!JApplication::getInstance('site')->getMenu()->getItems('link', 'index.php?option=com_portals&view=portal&id='.$portal->id, true)) {
-            if($portal->portals_category_id) {
-                $category = $this->getService('com://site/portals.model.categories')->id($portal->portals_category_id)->getItem();
+		$doc =& JFactory::getDocument();
+		if($portal->title) {
+			$doc->setTitle($portal->title);
+		}
 
-                $item = JApplication::getInstance('site')->getMenu()->getItems('link', 'index.php?option=com_portals&view=category&id='.$category->id, true);
+		if($portal->meta_keywords) {
+			$doc->setMetaData('Keywords', $portal->meta_keywords);
+		}
 
-                if($item) {
-                    $i = 0;
-                    foreach(explode('/', $item->route) as $part) {
-                        $pathway->addItem(ucfirst($part), 'index.php?Itemid='.$item->tree[$i]);
-                        $i++;
-                    }
-                } else {
-                    if(!JSite::getMenu()->getActive()->id) {
-                        $pathway->addItem($category->title, JRoute::_('index.php?option=com_portals&view=category&slug=' . $category->slug));
-                    }
-                }
+		if($portal->meta_description) {
+			$doc->setMetaData('Description', $portal->meta_description);
+		}
 
-                $pathway->addItem($portal->title);
-            }
-        }
+		//TODO: Check if itemId
+		$pathway = JFactory::getApplication()->getPathway();
 
-        return parent::display();
-    }
+		if(!JApplication::getInstance('site')->getMenu()->getItems('link', 'index.php?option=com_portals&view=portal&id='.$portal->id, true)) {
+			$category = $this->getService('com://site/portals.model.categories')->id($portal->portals_category_id)->getItem();
+
+			if($category->id) {
+				$item = JApplication::getInstance('site')->getMenu()->getItems('link', 'index.php?option=com_portals&view=category&id='.$category->id, true);
+
+				if($item) {
+					$i = 0;
+					foreach(explode('/', $item->route) as $part) {
+						$pathway->addItem(ucfirst($part), 'index.php?Itemid='.$item->tree[$i]);
+						$i++;
+					}
+				}
+
+				$pathway->addItem($portal->title);
+			}
+		}
+
+		return parent::display();
+	}
 }
