@@ -19,6 +19,7 @@ class ComPortalsModelPortals extends ComPortalsModelDefault
         parent::__construct($config);
 
         $this->_state
+            ->insert('slug', 'string', null, true)
             ->insert('featured', 'int')
             ->insert('portals_category_id', 'int');
     }
