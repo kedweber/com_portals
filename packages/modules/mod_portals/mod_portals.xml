@@ -7,8 +7,8 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>joep.van.der.heijden@moyoweb.nl</authorEmail>
 	<authorUrl>http://moyoweb.nl</authorUrl>
-	<version>1.0.0</version>
-	<description>Mod Portals</description>
+	<version>1.0.2</version>
+	<description>The Portals module displays a webring-like module in which links to a number of sites is presented to the user.</description>
 	<files>
 		<filename module="mod_portals">mod_portals.php</filename>
         <folder>tmpl</folder>
