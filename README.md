@@ -30,16 +30,16 @@ section:
 
 ```json
 {
-    "name": "cta-platform/portals",
+    "name": "cta/portals",
     "type": "vcs",
-    "url": "https://git.assembla.com/cta-platform.portals.git"
+    "url": "https://githug.com/cta-int/portals"
 }
 ```
 
 The require section should contain the following line:
 
 ```json
-    "cta-platform/portals": "1.*.*",
+    "cta/portals": "1.*.*",
 ```
 
 Afterward, just run `composer update` from the root of your Joomla project.
