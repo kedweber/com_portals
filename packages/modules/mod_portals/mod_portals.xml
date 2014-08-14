@@ -10,10 +10,11 @@
 	<version>1.0.3</version>
 	<description>The Portals module displays a webring-like module in which links to a number of sites is presented to the user.</description>
 	<files>
-		<filename module="mod_portals">mod_portals.php</filename>
+		<file module="mod_portals">mod_portals.php</file>
+        <file>html.php</file>
+        <file>mod_portals.xml</file>
+        
         <folder>tmpl</folder>
-        <filename>html.php</filename>
-		<filename>mod_portals.xml</filename>
 	</files>
 
     <config>
