@@ -7,7 +7,7 @@ class ModPortalsHtml extends ModDefaultHtml
 	 */
 	public function display()
 	{
-        $model = $this->getService('com://admin/portals.model.portals');
+        $model = $this->getService('com://site/portals.model.portals');
 
         if ($this->module->params->featured) {
             $model->featuted(1);
