@@ -22,11 +22,12 @@
     <administration>
         <files folder="administrator/components/com_portals">
             <file>portals.php</file>
-
+            <folder>controllers</folder>
             <folder>databases</folder>
             <folder>install</folder>
             <folder>language</folder>
-            <folder>models</folder>-
+            <folder>models</folder>
+            <folder>templates</folder>
             <folder>views</folder>
         </files>
 
