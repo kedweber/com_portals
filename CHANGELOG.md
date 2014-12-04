@@ -1,6 +1,6 @@
 # Portals Changelog
 
-### 1.0.10 (04-12-2014)
+### 1.0.4 (04-12-2014)
 
 * Added the changelog file.
 * Fixed composer installation.
