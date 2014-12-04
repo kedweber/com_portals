@@ -8,7 +8,7 @@
     <license>http://www.gnu.org/licenses/gpl.html GNU/GPL v3</license>
     <authorEmail>joep.van.der.heijden@moyoweb.nl</authorEmail>
     <authorUrl>www.moyoweb.nl</authorUrl>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <description>Portals</description>
 
     <install>
@@ -17,16 +17,26 @@
         </sql>
     </install>
 
-    <files />
+    <files folder="components/com_portals">
+        <file>portals.php</file>
+        <file>router.php</file>
+
+        <folder>databases</folder>
+        <folder>fields</folder>
+        <folder>language</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+    </files>
 
     <administration>
         <files folder="administrator/components/com_portals">
             <file>portals.php</file>
-
+            <folder>controllers</folder>
             <folder>databases</folder>
             <folder>install</folder>
             <folder>language</folder>
-            <folder>models</folder>-
+            <folder>models</folder>
+            <folder>templates</folder>
             <folder>views</folder>
         </files>
 
