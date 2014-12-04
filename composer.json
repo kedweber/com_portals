@@ -1,8 +1,8 @@
 {
     "name": "cta/portals",
     "type": "joomlatools-installer",
-    "description": "Articles Package. Second version.",
-    "keywords": ["joomla", "articles"],
+    "description": "Portals Package.",
+    "keywords": ["joomla", "portals"],
     "homepage": "https://github.com/cta-int/portals",
     "authors": [
         {
