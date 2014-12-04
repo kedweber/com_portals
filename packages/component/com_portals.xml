@@ -17,7 +17,16 @@
         </sql>
     </install>
 
-    <files />
+    <files folder="components/com_portals">
+        <file>portals.php</file>
+        <file>router.php</file>
+
+        <folder>databases</folder>
+        <folder>fields</folder>
+        <folder>language</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+    </files>
 
     <administration>
         <files folder="administrator/components/com_portals">
