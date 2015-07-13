@@ -1,9 +1,9 @@
 {
-    "name": "cta/portals",
+    "name": "moyo/com_portals",
     "type": "joomlatools-installer",
     "description": "Portals Package.",
     "keywords": ["joomla", "portals"],
-    "homepage": "https://github.com/cta-int/portals",
+    "homepage": "https://github.com/kedweber/com_portals",
     "authors": [
         {
             "name": "Joep van der Heijden",
