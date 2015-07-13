@@ -51,7 +51,7 @@ or from the original providers;
 The require section should contain the following line:
 
 ```json
-    "cta/portals": "1.*.*",
+    "moyo/portals": "1.*.*",
 ```
 
 Afterwards, one just needs to run the command `composer update` from the root of your Joomla project. This will 
